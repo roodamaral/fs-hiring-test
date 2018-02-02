@@ -1,0 +1,50 @@
+<br>
+<div class="container">
+	<div class="jumbotron">
+  <h1 class="display-4">Welcome to the bookings report page example for Motel Owners!!</h1>
+  <p class="lead">This is an example of how a bookings report page would look like if I were to join Luvotel's team!</p>
+  <hr class="my-4">
+  <p>Please choose one of the Users below to login to the panel!</p>
+
+<form action="/login" method='post'>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="email" id="email" value="john@doe.com">
+	<input type="hidden" name="password" id="password" value="password">
+	<p class="text-secondary"><input type="submit" value="John Doe - Owner of 2 Motels" class="btn btn-outline-dark"></p>
+</form>
+
+<br>
+<form action="/login" method='post'>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="email" id="email" value="john@day.com">
+	<input type="hidden" name="password" id="password" value="password">
+	<p class="text-secondary"><input type="submit" value="John Day - Owner of 1 Motel" class="btn btn-outline-dark"></p>
+</form>
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<body>
+	<%= flash[:invalid] %>
+
+
+
+
+</body>

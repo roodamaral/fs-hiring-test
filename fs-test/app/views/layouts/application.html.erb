@@ -7,8 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <%= e %>
+  <% end %>
+<% end %>
+
+<nav class="navbar  justify-content-between" style="background-color: #5A083D">
+  <a class="navbar-brand""><img height="35" src="https://dlcaxfik7itqg.cloudfront.net/assets/logo-w-c6582e3217f7efec110a0e6f09213b50e9846efce0d74027d336d5324aec1277.svg" alt="Logo w"></a>
+   <% if current_user %>
+  <form action="/logout" method="post" class="mr-sm-2" >
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Log Out" class="btn btn-outline-light">
+  </form>
+  </div>
+  <% else %>
+  <p class="text-white">Please, Login!</p>
+  <% end %> 
+</nav>
+
+
 
 <%= yield %>
+
+
+
+<footer class="bg-dark text-white mt-4">
+    <div class="container-fluid py-3">
+        <div class="row">
+            <div class="col-md-3">
+                <h6>Luvotels</h6></div>
+            <div class="col-md-3"> </div>
+            <div class="col-md-3">  </div>
+            <div class="col-md-3 text-right small align-self-end" ><i class="fa fa-facebook-official" aria-hidden="true" style="margin-right: 5px; font-size: 15pt"></i>
+<i class="fa fa-instagram" aria-hidden="true" style="margin-right: 5px; font-size: 15pt"></i><i class="fa fa-twitter" aria-hidden="true" style="font-size: 15pt"></i>
+
+ </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"> <i class="fa fa-address-book-o" aria-hidden="true" style="margin-right: 2px; font-size: 8pt;"></i><span class="small">  support@rodrigoamaral.com or +55 11 99948-3331 </span> <span class="small"><br><i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 2px; font-size: 8pt;"> </i>  Carangola Street, 427 - Jardim Guedalla - Sao Paulo, Brazil.</span></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3 text-right small align-self-end">©2017 Brand, Inc.</div>
+        </div>
+    </div><br>
+</footer>
 
 </body>
 </html>
